@@ -4,16 +4,18 @@
 	<title>Updating JS Variables</title>
 </head>
 <body onload="initElement();">
-	<button id="button">Click Me</button>
+	<button id="increase">Add One</button>
+	<button id="decrease">Remove One</button>
 
-	<p>Total clicks:<span id="clickCount"></span></p> 
+	<p>Clicks in the pot:<span id="clickCount"></span></p> 
 
 
 	<script>
 	var clicks = 0;
 
 	function initElement() {	
-		var button = document.getElementById('button');
+		var increase = document.getElementById('increase');
+		var decrease = document.getElementById('decrease');
 		var clickCount = document.getElementById('clickCount');		
 	};
 
@@ -22,12 +24,16 @@
 		clickCount.innerHTML = clicks; 
 	};	
 
+	function removeOne() {
+		if (clicks > 0) {
+			clicks--;
+			clickCount.innerHTML = clicks; 
+		};
+	};
 
-	button.onclick = addOne;
 
-
-
-
+	increase.onclick = addOne;
+	decrease.onclick = removeOne;
 
 	</script>
 
