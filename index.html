@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Updating JS Variables</title>
+</head>
+<body onload="initElement();">
+	<button id="button">Click Me</button>
+
+	<p>Total clicks:<span id="clickCount"></span></p> 
+
+
+	<script>
+	var clicks = 0;
+
+	function initElement() {	
+		var button = document.getElementById('button');
+		var clickCount = document.getElementById('clickCount');		
+	};
+
+	function addOne() {
+		clicks++;
+		clickCount.innerHTML = clicks; 
+	};	
+
+
+	button.onclick = addOne;
+
+
+
+
+
+	</script>
+
+</body>
+</html>
